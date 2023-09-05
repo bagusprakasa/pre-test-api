@@ -1,0 +1,46 @@
+{
+  "name": "pre-test-cashplus",
+  "version": "1.0.0",
+  "description": "Pre test for junior QA",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "link-module-alias",
+    "preinstall": "command -v link-module-alias && link-module-alias clean || true",
+    "test": "mocha test/scenario --reporter-options reportDir=reports --timeout 10000",
+    "test:account": "mocha test/scenario/account.test.js --reporter-options reportDir=reports --timeout 10000",
+    "test:authorized": "mocha test/scenario/authorized.test.js --reporter-options reportDir=reports --timeout 10000",
+    "test:token": "mocha test/scenario/generateToken.test.js --reporter-options reportDir=reports --timeout 10000",
+    "test:user": "mocha test/scenario/user.test.js --reporter-options reportDir=reports --timeout 10000",
+    "test:delete": "mocha test/scenario/delete-user.test.js --reporter-options reportDir=reports --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bagusprakasa/pre-test-api.git"
+  },
+  "keywords": [
+    "Automation",
+    "API",
+    "MochaAndChaijs",
+    "POM"
+  ],
+  "author": "bagusprakasa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bagusprakasa/pre-test-api/issues"
+  },
+  "homepage": "https://github.com/bagusprakasa/pre-test-api#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "chai": "^4.3.8",
+    "chai-json-schema": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "link-module-alias": "^1.2.0",
+    "mocha": "^10.2.0",
+    "mochawesome": "^7.1.3"
+  },
+  "_moduleAliases": {
+    "$root": "test",
+    "$helper": "test/helper"
+  },
+  "type": "module"
+}
